@@ -17,7 +17,7 @@ class JobsController extends Controller
     public function show($id) {
         return Job::find($id);
     }
-
+    // Lưu trữ job
     public function store() {
         $validated = request()->validate([
             'title' => 'required',
@@ -29,7 +29,7 @@ class JobsController extends Controller
 
         Toast::info('Job created successfully');
     }
-
+    // update job
     public function update($id) {
         $validated = request()->validate([
             'title' => 'required',
@@ -41,10 +41,11 @@ class JobsController extends Controller
 
         Toast::info('Job updated successfully');
     }
-
+    // xóa job
     public function destroy($id) {
         Job::find($id)->delete();
 
         Toast::info('Job deleted successfully');
     }
+
 }
