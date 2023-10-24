@@ -10,15 +10,18 @@ class JobsController extends Controller
 {
     //
 
-    public function index() {
+    public function index()
+    {
         return Job::latest()->paginate();
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         return Job::find($id);
     }
-    // Lưu trữ job
-    public function store() {
+    // save job
+    public function store()
+    {
         $validated = request()->validate([
             'title' => 'required',
             'bussiness_account_id' => 'required',
@@ -30,7 +33,8 @@ class JobsController extends Controller
         Toast::info('Job created successfully');
     }
     // update job
-    public function update($id) {
+    public function update($id)
+    {
         $validated = request()->validate([
             'title' => 'required',
             'bussiness_account_id' => 'required',
@@ -41,11 +45,11 @@ class JobsController extends Controller
 
         Toast::info('Job updated successfully');
     }
-    // xóa job
-    public function destroy($id) {
+    // delete job
+    public function destroy($id)
+    {
         Job::find($id)->delete();
 
         Toast::info('Job deleted successfully');
     }
-
 }
