@@ -19,7 +19,7 @@ class JobsController extends Controller
     {
         return Job::find($id);
     }
-    // save job
+    // save job12
     public function store()
     {
         $validated = request()->validate([
@@ -45,11 +45,10 @@ class JobsController extends Controller
 
         Toast::info('Job updated successfully');
     }
-    // delete job2
+    // delete job db sua
     public function destroy($id)
     {
         Job::find($id)->delete();
-
         Toast::info('Job deleted successfully');
     }
 }
