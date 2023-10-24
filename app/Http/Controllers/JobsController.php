@@ -45,7 +45,7 @@ class JobsController extends Controller
 
         Toast::info('Job updated successfully');
     }
-    // delete job
+    // delete job2
     public function destroy($id)
     {
         Job::find($id)->delete();
